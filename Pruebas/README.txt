@@ -1,4 +1,1 @@
-Nombre integrantes:
-Juan Carlos Ria;o Ria;o
-
-Ejercicio 1: Prueba para comandos git, 
+Carpeta para cacharrear y esperar que algo en mi vida funcione.
