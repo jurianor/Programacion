@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cmath>
+
+using fptr = double(double); //puntero que bota doble y recibe doble. Si la funcion recibiera 2 variables seria ftptr= double(double, double)
+
+double trapecio(int n, double a, double b, fptr fun);
+double fun(double x);
+
+int main(void){
+  const double H=0.1;
+  std::cout << trapecio(H, 0.0, 2*M_PI  , fun) << std::endl;
+  std::cout << -std::cos(2*M_PI)+std::cos(0.0) << std::endl;
+}
+
+double trapecio(int h, double a, double b, fptr fun)
+{
+  double sum  = 0.0;
+  double x =0;
+  int n = (a-b)/h;
+  for(int ii=1; ii <= n-1; ++ii){
+    x=a + ii*h;
+    sum += 2*fun(x)
+  }
+  sum +=fun(a)+fun(a+n*h);
+  return sum*(h/2);
+}
+
+double fun(int x)
+{
+  return std::sin(x);
+}
