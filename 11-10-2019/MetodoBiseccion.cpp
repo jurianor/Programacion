@@ -4,7 +4,7 @@
 using fptr=double (double);
 
 double biseccion(double xl, double xu, double eps, fptr fun);
-double regula_falsi(double xl, double xu, double eps, fptr fun)
+double regulafalsi(double xl, double xu, double eps, fptr fun)
 double fun(double x);
 
 int main(void)
@@ -22,19 +22,27 @@ double fun(double x)
 {
   return x + 10 - x*std::cosh(50/x);
 }
-	    
-double regula_falsi(double xl, double xu, double eps, fptr fun)
+
+
+
+double regulafalsi(double xl, double xu, double eps, fptr f)
 {
   double xr =xl;
   while(1){
-    xr=
-      xu -( fun(xu) * (xl-xu) / (fun(xl) - fun(xu));
+    xr=(xl+xu)/2;
+    xr= xu - (
+	      fun(xu)(xl-xu)/(
+			      fun(xl)-fun(xu)
+			      )
+	      )
     if (std::fabs(fun(xr)) <= eps){break;}
     else if (fun(xr)*fun(xl) < 0){xu = xr;}
     else {xl = xr;}
   }
   return xr;
 }
+
+
 
 double biseccion(double xl, double xu, double eps, fptr fun)
 {
